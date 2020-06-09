@@ -188,4 +188,52 @@ $(function() {
 		monthNames: ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
 		dayNamesMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб']
 	});
+	
+	function setAreaHeight(e) {
+		var container = e.parents('.js-area-container');
+		container.css({
+			'min-height': container.outerHeight()
+		});
+		e.outerHeight(1);
+		var h = e.get(0).scrollHeight;
+		e.outerHeight(h);
+		container.css({
+			'min-height': 0
+		});
+	}
+	
+	if ( $('.info-footer_fixed').length && $('.wrapper_order').length ) {
+		$('.wrapper_order').css({
+			paddingBottom: $('.info-footer_fixed').outerHeight()+30
+		});
+	}
+	
+	if ( $('.order-full__info').length ) {
+		var infoPane = $('.js-info-scroll');
+		infoPane.jScrollPane();
+		infoPaneApi = infoPane.data('jsp');
+		$(window).on('resize', function() {
+			infoPaneApi.reinitialise();
+		});
+	}
+	
+	if ( $('.order-full__chat').length ) {
+		var chatPane = $('.js-info-chat');
+		chatPane.jScrollPane();
+		chatPaneApi = chatPane.data('jsp');
+		$(window).on('resize', function() {
+			chatPaneApi.reinitialise();
+		});
+	}
+	
+	if ( $('.js-chat-input').val() !== '' ) {
+		setAreaHeight($('.js-chat-input'));
+	}
+	
+	$('.js-chat-input').on('input keyup change', function() {
+		setAreaHeight($(this));
+		if ( chatPaneApi !== undefined ) {
+			chatPaneApi.reinitialise();
+		}
+	});
 });

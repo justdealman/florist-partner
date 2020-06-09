@@ -1,0 +1,230 @@
+.info {
+	&-header {
+		&_single {
+			position: relative;
+			text-align: center;
+			padding-top: 44px;
+			padding-bottom: 17px;
+			background-color: #ffffff;
+		}
+		
+		&__statement {
+			&_disabled {
+				color: rgba(51, 51, 51, 0.3);
+			}
+		}
+		
+		&__print {
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+	}
+	
+	&__center {
+		max-width: 820px;
+		margin: 0 auto;
+	}
+	
+	&-footer {
+		&_fixed {
+			position: fixed;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			background-color: #ffffff;
+		}
+		
+		.details-price_single {
+			margin-bottom: 0;
+		}
+		
+		.details-price__row {
+			&:last-child {
+				border-bottom-width: 0;
+			}
+		}
+	}
+}
+
+.form {
+	&__print {
+		&_single {
+			padding: 10px;
+			
+			svg {
+				position: static;
+			}
+		}
+	}
+}
+
+.wrapper {
+	&_order {
+		padding-bottom: 152px;
+	}
+}
+
+.order {
+	&-full {
+		position: fixed;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		
+		&__header {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			padding-left: 215px;
+			padding-right: 215px;
+		}
+		
+		&__info {
+			display: flex;
+			flex-direction: column;
+			position: fixed;
+			left: 0;
+			top: 120px;
+			bottom: 0;
+			width: 480px;
+		}
+		
+		&__chat {
+			display: flex;
+			flex-direction: column;
+			position: fixed;
+			left: 480px;
+			top: 120px;
+			right: 0;
+			bottom: 0;
+			border-left: 1px solid #DADADA;
+		}
+		
+		&__container {
+			flex: 1;
+		}
+		
+		.jspScrollable .info-content__group {
+			margin-right: -12px;
+		}
+	}
+	
+}
+
+.chat {
+	&-dialog {
+		display: flex;
+		flex-direction: column;
+		padding: 10px 15px;
+	}
+	
+	&-print {
+		display: flex;
+		margin-top: auto;
+		background-color: #ffffff;
+		border-top: 1px solid #DADADA;
+		
+		&__upload {
+			display: inline-block;
+			cursor: pointer;
+			padding: 12px 8px 13px;
+			
+			svg {
+				width: 24px;
+				height: 24px;
+				stroke: #5B8D31;
+			}
+		}
+		
+		&__input {
+			flex: 1;
+			max-height: 190px;
+			font-size: 14px;
+			line-height: 20px;
+			letter-spacing: .01em;
+			padding: 14px 20px 15px 0;
+			resize: none;
+		}
+		
+		&__file {
+			display: none;
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 0;
+			height: 0;
+			overflow: hidden;
+			visibility: hidden;
+			opacity: 0;
+		}
+	}
+	
+	&-message {
+		margin-bottom: 8px;
+		
+		&:last-child {
+			margin-bottom: 0;
+		}
+		
+		&__text {
+			display: block;
+			color: #333333;
+			font-size: 14px;
+			line-height: 20px;
+			letter-spacing: .02em;
+		}
+		
+		&__head {
+			display: flex;
+			margin-bottom: 1px;
+		}
+		
+		&__name {
+			display: inline-block;
+			color: #5B8D31;
+			font-size: 14px;
+			line-height: 20px;
+			letter-spacing: .03em;
+			margin-right: 10px;
+		}
+		
+		&__date {
+			display: inline-block;
+			color: #333333;
+			font-size: 12px;
+			line-height: 20px;
+			letter-spacing: .03em;
+			padding-left: 5px;
+		}
+		
+		&__status {
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			fill: #333333;
+			opacity: .3;
+			margin-left: auto;
+			
+			&.is-read {
+				fill: #5B8D31;
+				opacity: 1;
+			}
+		}
+	}
+	
+	.jspScrollable .chat-message {
+		margin-right: -12px;
+	}
+}
+
+.header__logo {
+	&_chat {
+		position: absolute;
+		left: 25px;
+		top: 1px;
+		margin-right: 0;
+	}
+}
