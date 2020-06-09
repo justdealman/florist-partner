@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=yes">
+	<link href="./css/index.css" rel="stylesheet">
+	<body>
+		<div style="padding: 20px 30px; max-width: 640px; margin: 0 auto; display: flex; flex-direction: column; justify-content: center; min-height: 100%">
+			<div style="padding: 10px 0">
+				<button class="btn in-progress"><i></i><i></i><i></i><span>Войти</span></button>
+			</div>
+			<div style="padding: 10px 0">
+				<div class="form__item">
+					<input type="text" class="form__input form__input has-error js-label" value="Invalid data">
+					<label class="form__label">Ваш логин</label>
+				</div>
+			</div>
+			<div style="padding: 10px 0">
+				<div class="form__item is-valid">
+					<input type="text" class="form__input js-label" value="Valid data But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes">
+					<label class="form__label">Ваш логин</label>
+				</div>
+			</div>
+			<div style="padding: 10px 0">
+				<button class="btn js-error"><span>Click to error msg</span></button>
+			</div>
+			<div style="padding: 10px 0">
+				<button class="btn js-success"><span>Click to success msg</span></button>
+			</div>
+			<div style="padding: 10px 0">
+				<div class="loading in-progress"><i></i><i></i><i></i></div>
+			</div>
+		</div>
+		<script src="./js/libs.js"></script>
+		<script src="./js/scripts.js"></script>
+		<script>
+			$(function()
+			{
+				$('.js-error').on('click', function()
+				{
+					showAlert('Текст ошибки', 'error', 3000);
+				});
+				$('.js-success').on('click', function()
+				{
+					showAlert('Текст успеха', 'success', 3000);
+				});
+			});
+		</script>
+	</body>
+</html>

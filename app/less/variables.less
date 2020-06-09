@@ -1,0 +1,39 @@
+@colorBase: #333333;
+@colorLink: #5b8d31;
+@colorLinkHover: #ffac21;
+@colorHolder: #adadad;
+@colorGreen: #5b8d31;
+@colorRed: #fb6649;
+
+@windowPadding: 30px;
+@threecols: 1182px;
+@twocols: 958px;
+
+@picsUrl: '../img';
+@spriteUrl: '../img/svg/sprite.css.svg';
+@symbolsUrl: '../img/symbols.svg';
+
+@notebook: ~'(max-width: 1241px)';
+
+.underlineLink(@color, @colorHover) {
+	box-shadow: 0 1px 0 fade(@color, 50%);
+	
+	&:hover {
+		box-shadow: 0 1px 0 fade(@colorHover, 50%);
+	}
+}
+
+.placeholder(@color) {
+	::-webkit-input-placeholder {
+		color: @color;
+	}
+	:-moz-placeholder {
+		color: @color;
+	}
+	::-moz-placeholder {
+		color: @color;
+	}
+	:-ms-input-placeholder {
+		color: @color;
+	}
+}

@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=yes">
+	<link href="./css/index.css" rel="stylesheet">
+	<body>
+		<header class="header">
+			<div class="header__row">
+				<a href="/" class="header__logo">
+					<img src="./img/logo.svg" width="154" height="56" alt="">
+				</a>
+				<nav class="nav">
+					<a href="./orders-received.html">Полученные заказы</a>
+					<span class="is-active">Размещенные заказы</span>
+					<a href="./operations.html">Операции</a>
+				</nav>
+				<span class="header__login"> Ostorozhno1 <svg width="10" height="20">
+						<use xlink:href="./img/sprite.svg#arrow-right"></use>
+					</svg>
+				</span>
+				<div class="user">
+					<div class="user__item">
+						<span class="user__row">Ваша скидка <span>-10%</span></span>
+					</div>
+					<div class="user__item">
+						<span class="user__row">Долг <span>51 180.78 ₽</span></span>
+						<span class="user__message">Мы не можем принимать от вас заказы, так как задолженность превышает 30 000 руб.</span>
+					</div>
+					<div class="user__nav">
+						<a href="javascript:void(0);">Правила исполнения заказов</a>
+					</div>
+					<div class="user__nav">
+						<a href="javascript:void(0);" data-open="payment-accept">Принять оплату</a>
+						<a href="javascript:void(0);" data-open="change-password">Изменить пароль</a>
+						<a href="javascript:void(0);">Выйти</a>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="wrapper">
+			<table class="orders">
+				<tr>
+					<td>
+						<div class="orders__filter">
+							<input type="text" class="orders__input" placeholder="№ заказа">
+						</div>
+					</td>
+					<td>
+						<div class="orders__filter">
+							<input type="text" class="orders__input" placeholder="Оформлен">
+						</div>
+					</td>
+					<td>
+						<div class="orders__filter">
+							<select class="orders__select select-custom">
+								<option selected>₽, руб.</option>
+								<option>$, usd.</option>
+							</select>
+						</div>
+					</td>
+					<td>
+						<div class="orders__filter">
+							<input type="text" class="orders__input" placeholder="Клиент" value="Ильдар Бекмансуров">
+							<span class="orders__filter__clear">
+								<svg>
+									<use xlink:href="./img/sprite.svg#clear"></use>
+								</svg>
+							</span>
+						</div>
+					</td>
+					<td>
+						<div class="orders__filter">
+							<input type="text" class="orders__input" placeholder="Получатель">
+						</div>
+					</td>
+					<td>
+						<div class="orders__filter">
+							<select class="select-select2 placeholder populate">
+								<option></option>
+								<option>Москва, Россия</option>
+								<option>Санкт Петербург, Россия</option>
+								<option>Казань, Россия</option>
+								<option>Екатеринбург, Россия</option>
+								<option>Нижний Новгород, Россия</option>
+								<option>Набережные Челны, Россия</option>
+								<option>Владивосток, Россия</option>
+								<option>Ростов-на-Дону, Россия</option>
+								<option>Самара, Россия</option>
+							</select>
+						</div>
+					</td>
+					<td>
+						<div class="orders__filter">
+							<input type="text" class="orders__input js-datepicker" placeholder="В дату">
+						</div>
+					</td>
+					<td>
+						<div class="orders__filter">
+							<select class="orders__select select-custom">
+								<option selected>- любое время -</option>
+								<option>поздняя доставка</option>
+								<option>ранняя доставка</option>
+								<option>в рабочее время</option>
+							</select>
+						</div>
+					</td>
+					<td>
+						<div class="orders__filter">
+							<select class="orders__select select-custom">
+								<option selected>- любой статус -</option>
+								<option>выполнен</option>
+								<option>отменен</option>
+							</select>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th colspan="9">Апрель, 2019</th>
+				</tr>
+				<tr>
+					<td><a href="#" data-order-open="1">№ 34710117</a></td>
+					<td>15 апр, 17:01</td>
+					<td>6 780 ₽</td>
+					<td>Ильдар Бекмансуров</td>
+					<td>testa testovna</td>
+					<td>Авалон, Россия</td>
+					<td>15 апр, 2019</td>
+					<td>Назн. получатель</td>
+					<td>Выполнен</td>
+				</tr>
+				<tr>
+					<td><a href="#" data-order-open="2">№ 34710117</a></td>
+					<td>15 апр, 17:01</td>
+					<td>6 780 ₽</td>
+					<td>Ильдар Бекмансуров</td>
+					<td>testa testovna</td>
+					<td>Авалон, Россия</td>
+					<td>15 апр, 2019</td>
+					<td>Назн. получатель</td>
+					<td>Выполнен</td>
+				</tr>
+				<tr>
+					<td><a href="#" data-order-open="1">№ 34710117</a></td>
+					<td>15 апр, 17:01</td>
+					<td>6 780 ₽</td>
+					<td>Ильдар Бекмансуров</td>
+					<td>testa testovna</td>
+					<td>Авалон, Россия</td>
+					<td>15 апр, 2019</td>
+					<td>Назн. получатель</td>
+					<td>Выполнен</td>
+				</tr>
+				<tr>
+					<td><a href="#" data-order-open="1">№ 34710117</a></td>
+					<td>15 апр, 17:01</td>
+					<td>6 780 ₽</td>
+					<td>Ильдар Бекмансуров</td>
+					<td>testa testovna</td>
+					<td>Авалон, Россия</td>
+					<td>15 апр, 2019</td>
+					<td>Назн. получатель</td>
+					<td>Выполнен</td>
+				</tr>
+				<tr>
+					<td><a href="#" data-order-open="1">№ 34710117</a></td>
+					<td>15 апр, 17:01</td>
+					<td>6 780 ₽</td>
+					<td>Ильдар Бекмансуров</td>
+					<td>testa testovna</td>
+					<td>Авалон, Россия</td>
+					<td>15 апр, 2019</td>
+					<td>Назн. получатель</td>
+					<td>Выполнен</td>
+				</tr>
+				<tr>
+					<td><a href="#" data-order-open="1">№ 34710117</a></td>
+					<td>15 апр, 17:01</td>
+					<td>6 780 ₽</td>
+					<td>Ильдар Бекмансуров</td>
+					<td>testa testovna</td>
+					<td>Авалон, Россия</td>
+					<td>15 апр, 2019</td>
+					<td>Назн. получатель</td>
+					<td>Выполнен</td>
+				</tr>
+				<tr>
+					<td><a href="#" data-order-open="1">№ 34710117</a></td>
+					<td>15 апр, 17:01</td>
+					<td>6 780 ₽</td>
+					<td>Ильдар Бекмансуров</td>
+					<td>testa testovna</td>
+					<td>Авалон, Россия</td>
+					<td>15 апр, 2019</td>
+					<td>Назн. получатель</td>
+					<td>Выполнен</td>
+				</tr>
+				<tr>
+					<td><a href="#" data-order-open="1">№ 34710117</a></td>
+					<td>15 апр, 17:01</td>
+					<td>6 780 ₽</td>
+					<td>Ильдар Бекмансуров</td>
+					<td>testa testovna</td>
+					<td>Авалон, Россия</td>
+					<td>15 апр, 2019</td>
+					<td>Назн. получатель</td>
+					<td>Выполнен</td>
+				</tr>
+				<tr>
+					<td><a href="#" data-order-open="1">№ 34710117</a></td>
+					<td>15 апр, 17:01</td>
+					<td>6 780 ₽</td>
+					<td>Ильдар Бекмансуров</td>
+					<td>testa testovna</td>
+					<td>Авалон, Россия</td>
+					<td>15 апр, 2019</td>
+					<td>Назн. получатель</td>
+					<td>Выполнен</td>
+				</tr>
+				<tr>
+					<td><a href="#" data-order-open="1">№ 34710117</a></td>
+					<td>15 апр, 17:01</td>
+					<td>6 780 ₽</td>
+					<td>Ильдар Бекмансуров</td>
+					<td>testa testovna</td>
+					<td>Авалон, Россия</td>
+					<td>15 апр, 2019</td>
+					<td>Назн. получатель</td>
+					<td>Выполнен</td>
+				</tr>
+				<tr>
+					<th colspan="9">Март, 2019</th>
+				</tr>
+				<tr>
+					<td><a href="#" data-order-open="1">№ 34710117</a></td>
+					<td>15 апр, 17:01</td>
+					<td>6 780 ₽</td>
+					<td>Ильдар Бекмансуров</td>
+					<td>testa testovna</td>
+					<td>Авалон, Россия</td>
+					<td>15 апр, 2019</td>
+					<td>Назн. получатель</td>
+					<td>Выполнен</td>
+				</tr>
+				<tr>
+					<td><a href="#" data-order-open="1">№ 34710117</a></td>
+					<td>15 апр, 17:01</td>
+					<td>6 780 ₽</td>
+					<td>Ильдар Бекмансуров</td>
+					<td>testa testovna</td>
+					<td>Авалон, Россия</td>
+					<td>15 апр, 2019</td>
+					<td>Назн. получатель</td>
+					<td>Выполнен</td>
+				</tr>
+				<tr>
+					<td><a href="#" data-order-open="1">№ 34710117</a></td>
+					<td>15 апр, 17:01</td>
+					<td>6 780 ₽</td>
+					<td>Ильдар Бекмансуров</td>
+					<td>testa testovna</td>
+					<td>Авалон, Россия</td>
+					<td>15 апр, 2019</td>
+					<td>Назн. получатель</td>
+					<td>Выполнен</td>
+				</tr>
+				<tr>
+					<td><a href="#" data-order-open="1">№ 34710117</a></td>
+					<td>15 апр, 17:01</td>
+					<td>6 780 ₽</td>
+					<td>Ильдар Бекмансуров</td>
+					<td>testa testovna</td>
+					<td>Авалон, Россия</td>
+					<td>15 апр, 2019</td>
+					<td>Назн. получатель</td>
+					<td>Выполнен</td>
+				</tr>
+				<tr>
+					<td><a href="#" data-order-open="1">№ 34710117</a></td>
+					<td>15 апр, 17:01</td>
+					<td>6 780 ₽</td>
+					<td>Ильдар Бекмансуров</td>
+					<td>testa testovna</td>
+					<td>Авалон, Россия</td>
+					<td>15 апр, 2019</td>
+					<td>Назн. получатель</td>
+					<td>Выполнен</td>
+				</tr>
+				<tr>
+					<td><a href="#" data-order-open="1">№ 34710117</a></td>
+					<td>15 апр, 17:01</td>
+					<td>6 780 ₽</td>
+					<td>Ильдар Бекмансуров</td>
+					<td>testa testovna</td>
+					<td>Авалон, Россия</td>
+					<td>15 апр, 2019</td>
+					<td>Назн. получатель</td>
+					<td>Выполнен</td>
+				</tr>
+				<tr>
+					<td><a href="#" data-order-open="1">№ 34710117</a></td>
+					<td>15 апр, 17:01</td>
+					<td>6 780 ₽</td>
+					<td>Ильдар Бекмансуров</td>
+					<td>testa testovna</td>
+					<td>Авалон, Россия</td>
+					<td>15 апр, 2019</td>
+					<td>Назн. получатель</td>
+					<td>Выполнен</td>
+				</tr>
+				<tr>
+					<td><a href="#" data-order-open="1">№ 34710117</a></td>
+					<td>15 апр, 17:01</td>
+					<td>6 780 ₽</td>
+					<td>Ильдар Бекмансуров</td>
+					<td>testa testovna</td>
+					<td>Авалон, Россия</td>
+					<td>15 апр, 2019</td>
+					<td>Назн. получатель</td>
+					<td>Выполнен</td>
+				</tr>
+				<tr>
+					<td><a href="#" data-order-open="1">№ 34710117</a></td>
+					<td>15 апр, 17:01</td>
+					<td>6 780 ₽</td>
+					<td>Ильдар Бекмансуров</td>
+					<td>testa testovna</td>
+					<td>Авалон, Россия</td>
+					<td>15 апр, 2019</td>
+					<td>Назн. получатель</td>
+					<td>Выполнен</td>
+				</tr>
+				<tr>
+					<td><a href="#" data-order-open="1">№ 34710117</a></td>
+					<td>15 апр, 17:01</td>
+					<td>6 780 ₽</td>
+					<td>Ильдар Бекмансуров</td>
+					<td>testa testovna</td>
+					<td>Авалон, Россия</td>
+					<td>15 апр, 2019</td>
+					<td>Назн. получатель</td>
+					<td>Выполнен</td>
+				</tr>
+			</table>
+		</div>
+		<footer class="footer">
+			<div class="footer__row">
+				<span class="footer__copy">© 1999—2019 <a href="https://www.florist.ru">Флорист.ру — международная сеть доставки цветов и букетов</a></span>
+			</div>
+		</footer>
+		<div class="form form_modal" data-target="change-password">
+			<span class="form__close" data-modal-close>
+				<svg>
+					<use xlink:href="./img/sprite.svg#close"></use>
+				</svg>
+			</span>
+			<span class="form__title">Изменить пароль</span>
+			<div class="form__group">
+				<div class="form__item">
+					<input type="text" class="form__input js-label">
+					<label class="form__label">Старый пароль</label>
+				</div>
+				<div class="form__item">
+					<input type="password" class="form__input js-label">
+					<label class="form__label">Новый пароль</label>
+				</div>
+				<div class="form__item">
+					<input type="password" class="form__input js-label">
+					<label class="form__label">Повторите пароль</label>
+				</div>
+			</div>
+			<input type="submit" class="btn" value="Сохранить">
+		</div>
+		<div class="form form_modal" data-target="payment-accept">
+			<span class="form__close" data-modal-close>
+				<svg>
+					<use xlink:href="./img/sprite.svg#close"></use>
+				</svg>
+			</span>
+			<span class="form__title">Принять оплату</span>
+			<div class="form__group">
+				<div class="form__item">
+					<input type="text" class="form__input js-label">
+					<label class="form__label">№ заказа</label>
+				</div>
+			</div>
+			<input type="submit" class="btn" value="Найти" data-open="payment-success">
+		</div>
+		<div class="form form_modal" data-target="payment-success">
+			<span class="form__close" data-modal-close>
+				<svg>
+					<use xlink:href="./img/sprite.svg#close"></use>
+				</svg>
+			</span>
+			<span class="form__title">№ 74317790</span>
+			<div class="details">
+				<div class="details-group">
+					<div class="details-group__item">
+						<span class="details-group__title">Заказ оформлен</span>
+						<span class="details-group__row">8 апреля, 2019 <span>13:02</span></span>
+					</div>
+					<div class="details-group__item">
+						<span class="details-group__title">Дата и время доставки</span>
+						<span class="details-group__row">17 апреля, 2019 <span>21:00—23:00</span></span>
+					</div>
+				</div>
+				<div class="details-price">
+					<span class="details-price__row">Сумма заказа <span>5 750 ₽</span></span>
+					<span class="details-price__row">Доставка <span>0 ₽</span></span>
+					<span class="details-price__row">Итого <span>5 750 ₽</span></span>
+				</div>
+				<div class="details-group">
+					<div class="details-group__item">
+						<span class="details-group__title">Взять с клиента</span>
+						<span class="details-group__row">
+							<input type="text" class="details-group__input" value="4423" maxlength="12">
+							<span><b>₽</b></span>
+						</span>
+					</div>
+				</div>
+			</div>
+			<input type="submit" class="btn" value="Подтвердить оплату">
+			<span class="form__print">
+				<svg>
+					<use xlink:href="./img/sprite.svg#print"></use>
+				</svg> Распечатать </span>
+		</div>
+		<div class="fade-bg"></div>
+		<div class="info" data-order-id="1">
+			<span class="info__close">
+				<svg>
+					<use xlink:href="./img/sprite.svg#close"></use>
+				</svg>
+			</span>
+			<div class="info-header">
+				<span class="info-header__title">Заказ №27658862</span>
+				<span class="info-header__statement">Выполнен</span>
+			</div>
+			<div class="info-content" data-custom-scroll>
+				<div class="info-content__group">
+					<div class="info-table">
+						<div class="info-table__row">
+							<div class="info-table__col info-table__col_photo">
+								<div class="info-table__photo" style="background-image: url('./pic/5a8adcb02aa5f.png')"></div>
+							</div>
+							<span class="info-table__col info-table__col_title">На Крыльях Ветра<br> Стандартный</span>
+							<span class="info-table__col info-table__col_price">5 750 ₽</span>
+						</div>
+					</div>
+					<div class="details-group__item">
+						<span class="details-group__title">Текст открытки</span>
+						<span class="details-group__row details-group__row_bottom">С днем рождения, дорогая! Желаю крепкого здоровья, удачи, благополучия, добра, радости, любви, счастья, хорошего настроения, улыбок, ярких впечатлений. Пусть тепло и уют всегда наполняют твой дом, пусть солнечный свет согревает в любую погоду, а желания исполняются при одной мысли о них!</span>
+					</div>
+					<div class="info-photo">
+						<span class="info-photo__link">+ Фотография момента доставки</span>
+					</div>
+				</div>
+				<div class="info-content__group">
+					<div class="details-group__item">
+						<span class="details-group__title">Получатель</span>
+						<span class="details-group__row">Ирина Яковлева <span>+7 960 052 10 11</span></span>
+					</div>
+					<div class="details-group__item">
+						<span class="details-group__title">Город и адрес</span>
+						<span class="details-group__row">Москва, Россия, ул. Николая Ершова 62Г, кв 481, п. 12, домофон 481, закрытый двор</span>
+					</div>
+					<div class="details-group__item">
+						<span class="details-group__title">Дата и время доставки</span>
+						<span class="details-group__row">15 апреля, 2019 <span>8:00—10:00</span></span>
+					</div>
+				</div>
+				<div class="info-content__group">
+					<div class="details-group__item">
+						<span class="details-group__title">Состав букета На Крыльях Ветра</span>
+						<span class="details-group__row details-group__row_bottom"> Тюльпан розовый 5 шт<br> Гиацинт синий 3 шт<br> Ирис синий 3 шт<br> Гиперикум розовый 3 шт<br> Эвкалипт<br> Бумага упаковочная<br> Лента<br>
+						</span>
+					</div>
+				</div>
+				<div class="info-content__group">
+					<div class="info-rules">
+						<span class="info-rules__title">Основные правила исполнения заказов</span>
+						<span class="info-rules__item">Все замены должны быть согласованы.</span>
+						<span class="info-rules__item">О сложностях с заказом необходимо своевременно информировать клиентскую службу Флорист.ру.</span>
+						<span class="info-rules__item">Все вопросы с курьером, когда он не может найти получателя/попасть в подъезд и тд, решаются в течение 15 минут после его звонка. Если вопрос за это время не решился, курьер возвращает букет в салон.</span>
+						<span class="info-rules__item">Фотография каждого заказа перед доставкой является обязательным условием сотрудничества.</span>
+						<span class="info-rules__item">Курьеры должны отчитываться о доставке в течение 10 минут.</span>
+						<span class="info-rules__item">Узнайте больше <a href="javascript:void(0);">о правилах выполнения заказов</a></span>
+					</div>
+				</div>
+			</div>
+			<div class="info-footer">
+				<div class="details-price">
+					<span class="details-price__row">Сумма заказа <span>5 750 ₽</span></span>
+					<span class="details-price__row">Доставка <span>0 ₽</span></span>
+					<span class="details-price__row">Итого <span>5 750 ₽</span></span>
+				</div>
+				<span class="form__print">
+					<svg>
+						<use xlink:href="./img/sprite.svg#print"></use>
+					</svg> Распечатать </span>
+			</div>
+		</div>
+		<div class="info" data-order-id="2" data-custom-scroll>
+			<span class="info__close">
+				<svg>
+					<use xlink:href="./img/sprite.svg#close"></use>
+				</svg>
+			</span>
+			<div class="info-header">
+				<span class="info-header__title">Заказ №27658862</span>
+				<span class="info-header__statement">Выполнен</span>
+			</div>
+			<div class="info-content" data-custom-scroll>
+				<div class="info-content__group">
+					<div class="info-table">
+						<div class="info-table__row">
+							<div class="info-table__col info-table__col_photo">
+								<div class="info-table__photo" style="background-image: url('./pic/5a8adcb02aa5f.png')"></div>
+							</div>
+							<span class="info-table__col info-table__col_title">На Крыльях Ветра<br> Стандартный</span>
+							<span class="info-table__col info-table__col_price">5 750 ₽</span>
+						</div>
+					</div>
+					<div class="details-group__item">
+						<span class="details-group__title">Текст открытки</span>
+						<span class="details-group__row details-group__row_bottom">С днем рождения, дорогая! Желаю крепкого здоровья, удачи, благополучия, добра, радости, любви, счастья, хорошего настроения, улыбок, ярких впечатлений. Пусть тепло и уют всегда наполняют твой дом, пусть солнечный свет согревает в любую погоду, а желания исполняются при одной мысли о них!</span>
+					</div>
+					<div class="info-photo">
+						<span class="info-photo__link">+ Фотография момента доставки</span>
+					</div>
+				</div>
+				<div class="info-content__group">
+					<div class="details-group__item">
+						<span class="details-group__title">Получатель</span>
+						<span class="details-group__row">Ирина Яковлева <span>+7 960 052 10 11</span></span>
+					</div>
+					<div class="details-group__item">
+						<span class="details-group__title">Город и адрес</span>
+						<span class="details-group__row">Москва, Россия, ул. Николая Ершова 62Г, кв 481, п. 12, домофон 481, закрытый двор</span>
+					</div>
+					<div class="details-group__item">
+						<span class="details-group__title">Дата и время доставки</span>
+						<span class="details-group__row">15 апреля, 2019 <span>8:00—10:00</span></span>
+					</div>
+				</div>
+				<div class="info-content__group">
+					<div class="details-group__item">
+						<span class="details-group__title">Состав букета На Крыльях Ветра</span>
+						<span class="details-group__row details-group__row_bottom"> Тюльпан розовый 5 шт<br> Гиацинт синий 3 шт<br> Ирис синий 3 шт<br> Гиперикум розовый 3 шт<br> Эвкалипт<br> Бумага упаковочная<br> Лента<br>
+						</span>
+					</div>
+				</div>
+				<div class="info-content__group">
+					<div class="info-rules">
+						<span class="info-rules__title">Основные правила исполнения заказов</span>
+						<span class="info-rules__item">Все замены должны быть согласованы.</span>
+						<span class="info-rules__item">О сложностях с заказом необходимо своевременно информировать клиентскую службу Флорист.ру.</span>
+						<span class="info-rules__item">Все вопросы с курьером, когда он не может найти получателя/попасть в подъезд и тд, решаются в течение 15 минут после его звонка. Если вопрос за это время не решился, курьер возвращает букет в салон.</span>
+						<span class="info-rules__item">Фотография каждого заказа перед доставкой является обязательным условием сотрудничества.</span>
+						<span class="info-rules__item">Курьеры должны отчитываться о доставке в течение 10 минут.</span>
+						<span class="info-rules__item">Узнайте больше <a href="javascript:void(0);">о правилах выполнения заказов</a></span>
+					</div>
+				</div>
+			</div>
+			<div class="info-footer">
+				<div class="details-price">
+					<span class="details-price__row">Сумма заказа <span>5 750 ₽</span></span>
+					<span class="details-price__row">Доставка <span>0 ₽</span></span>
+					<span class="details-price__row">Итого <span>5 750 ₽</span></span>
+				</div>
+				<span class="form__print">
+					<svg>
+						<use xlink:href="./img/sprite.svg#print"></use>
+					</svg> Распечатать </span>
+			</div>
+		</div>
+		<script src="./js/libs.js"></script>
+		<script src="./js/scripts.js"></script>
+	</body>
+</html>
