@@ -16,8 +16,27 @@
 		
 		&__print {
 			position: absolute;
-			right: 0;
-			top: 0;
+			right: 15px;
+			top: 5px;
+		}
+		
+		&__back {
+			position: absolute;
+			left: 20px;
+			bottom: 10px;
+		}
+		
+		&_back {
+			position: relative;
+			text-align: center;
+			padding: 20px 100px 20px;
+			background-color: #ffffff;
+			
+			&__icon {
+				position: absolute;
+				left: 20px;
+				top: 10px;
+			}
 		}
 	}
 	
@@ -37,12 +56,6 @@
 		
 		.details-price_single {
 			margin-bottom: 0;
-		}
-		
-		.details-price__row {
-			&:last-child {
-				border-bottom-width: 0;
-			}
 		}
 	}
 }
@@ -69,7 +82,7 @@
 	&-full {
 		position: fixed;
 		left: 0;
-		top: 0;
+		top: 80px;
 		width: 100%;
 		height: 100%;
 		
@@ -87,20 +100,28 @@
 			flex-direction: column;
 			position: fixed;
 			left: 0;
+			right: 30%;
 			top: 120px;
 			bottom: 0;
-			width: 480px;
+			
+			&_top {
+				top: 80px;
+			}
 		}
 		
 		&__chat {
 			display: flex;
 			flex-direction: column;
 			position: fixed;
-			left: 480px;
 			top: 120px;
 			right: 0;
 			bottom: 0;
+			width: 30%;
 			border-left: 1px solid #DADADA;
+			
+			&_top {
+				top: 80px;
+			}
 		}
 		
 		&__container {
@@ -128,9 +149,12 @@
 		border-top: 1px solid #DADADA;
 		
 		&__upload {
+			position: relative;
+			z-index: 1;
 			display: inline-block;
 			cursor: pointer;
 			padding: 12px 8px 13px;
+			margin-right: -15px;
 			
 			svg {
 				width: 24px;
@@ -140,12 +164,13 @@
 		}
 		
 		&__input {
+			position: relative;
 			flex: 1;
 			max-height: 190px;
 			font-size: 14px;
 			line-height: 20px;
 			letter-spacing: .01em;
-			padding: 14px 20px 15px 0;
+			padding: 14px 15px 15px;
 			resize: none;
 		}
 		
@@ -159,6 +184,31 @@
 			overflow: hidden;
 			visibility: hidden;
 			opacity: 0;
+		}
+		
+		&__send {
+			position: relative;
+			z-index: 1;
+			display: inline-block;
+			padding: 14px 10px 15px;
+			margin-top: auto;
+			margin-left: -10px;
+			
+			svg {
+				width: 20px;
+				height: 20px;
+				fill: #333333;
+				opacity: .5;
+			}
+			
+			&.is-active {
+				cursor: pointer;
+			
+				svg {
+					fill: #5B8D31;
+					opacity: 1;
+				}
+			}
 		}
 	}
 	
@@ -226,5 +276,44 @@
 		left: 25px;
 		top: 1px;
 		margin-right: 0;
+	}
+}
+
+.link {
+	&-back {
+		display: inline-block;
+		font-size: 0;
+		color: #5B8D31;
+		padding: 5px;
+		
+		&__icon {
+			display: inline-block;
+			fill: #5B8D31;
+			width: 10px;
+			height: 20px;
+		}
+		
+		&__text {
+			font-size: 14px;
+			line-height: 20px;
+			font-weight: 500;
+			letter-spacing: .02em;
+		}
+		
+		&:hover {
+			svg {
+				fill: #ffac21;
+			}
+		}
+	}
+}
+
+.order-full__info .info-footer {
+	.details-price {
+		margin-bottom: 0;
+	}
+	
+	.details-price__row:last-child {
+		border-bottom-width: 0;
 	}
 }

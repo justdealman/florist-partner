@@ -228,12 +228,22 @@ $(function() {
 	
 	if ( $('.js-chat-input').val() !== '' ) {
 		setAreaHeight($('.js-chat-input'));
+		if ( $('.js-chat-send').length !== '' ) {
+			$('.js-chat-send').addClass('is-active');
+		}
 	}
 	
 	$('.js-chat-input').on('input keyup change', function() {
 		setAreaHeight($(this));
 		if ( chatPaneApi !== undefined ) {
 			chatPaneApi.reinitialise();
+		}
+		if ( $('.js-chat-send').length !== '' ) {
+			if ( $(this).val() !== '' ) {
+				$('.js-chat-send').addClass('is-active');
+			} else {
+				$('.js-chat-send').removeClass('is-active');
+			}
 		}
 	});
 });

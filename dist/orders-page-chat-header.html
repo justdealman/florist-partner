@@ -5,26 +5,59 @@
 	<meta name="viewport" content="width=device-width, user-scalable=yes">
 	<link href="./css/index.css" rel="stylesheet">
 	<body>
-		<div class="order-full">
-			<div class="info-header info-header_single order-full__header">
-				<a href="/" class="header__logo header__logo_chat">
+	
+		<header class="header">
+			<div class="header__row">
+				<a href="/" class="header__logo">
 					<img src="./img/logo.svg" width="154" height="56" alt="">
 				</a>
-				<span class="info-header__title">Заказ №27658862</span>
-				<span class="info-header__statement info-header__statement_disabled">В обработке...</span>
-				<a href="#" class="link-back info-header__back">
-					<svg class="link-back__icon">
-						<use xlink:href="./img/sprite.svg#back"></use>
-					</svg>
-					<span class="link-back__text">Назад</span>
-				</a>
-				<span class="form__print form__print_single info-header__print">
-					<svg>
-						<use xlink:href="./img/sprite.svg#print"></use>
+				<nav class="nav">
+					<a href="./orders-received.html">Полученные заказы</a>
+					<a href="./orders-page.html">Размещенные заказы</a>
+					<a href="./operations.html">Операции</a>
+				</nav>
+				<span class="header__login">
+					Ostorozhno1
+					<svg width="10" height="20">
+						<use xlink:href="./img/sprite.svg#arrow-right"></use>
 					</svg>
 				</span>
+				<div class="user">
+					<div class="user__item">
+						<span class="user__row">Ваша скидка <span>-10%</span></span>
+					</div>
+					<div class="user__item">
+						<span class="user__row">Долг <span>51 180.78 ₽</span></span>
+						<span class="user__message">Мы не можем принимать от вас заказы, так как задолженность превышает 30 000 руб.</span>
+					</div>
+					<div class="user__nav">
+						<a href="javascript:void(0);">Правила исполнения заказов</a>
+					</div>
+					<div class="user__nav">
+						<a href="javascript:void(0);" data-open="payment-accept">Принять оплату</a>
+						<a href="javascript:void(0);" data-open="change-password">Изменить пароль</a>
+						<a href="javascript:void(0);">Выйти</a>
+					</div>
+				</div>
 			</div>
-			<div class="order-full__info">
+		</header>
+		<div class="order-full">
+			<div class="order-full__info order-full__info_top">
+				<div class="info-header info-header_back">
+					<span class="info-header__title">Заказ №27658862</span>
+					<span class="info-header__statement info-header__statement_disabled">В обработке...</span>
+					<a href="./orders-received.html" class="link-back info-header_back__icon">
+						<svg class="link-back__icon">
+							<use xlink:href="./img/sprite.svg#back"></use>
+						</svg>
+						<span class="link-back__text">Назад</span>
+					</a>
+					<span class="form__print form__print_single info-header__print">
+						<svg>
+							<use xlink:href="./img/sprite.svg#print"></use>
+						</svg>
+					</span>
+				</div>
 				<div class="info-content js-info-scroll">
 					<div class="info-content__group">
 						<div class="info-table">
@@ -78,14 +111,14 @@
 					</div>
 				</div>
 				<div class="info-footer">
-					<div class="details-price details-price_single">
+					<div class="details-price">
 						<span class="details-price__row">Сумма заказа <span>5 750 ₽</span></span>
 						<span class="details-price__row">Доставка <span>0 ₽</span></span>
 						<span class="details-price__row">Итого <span>5 750 ₽</span></span>
 					</div>
 				</div>
 			</div>
-			<div class="order-full__chat">
+			<div class="order-full__chat order-full__chat_top">
 				<div class="order-full__container js-info-chat">
 					<div class="chat-dialog">
 						<div class="chat-message">
@@ -332,6 +365,11 @@
 				</div>
 				<div class="chat-print js-area-container">
 					<textarea class="chat-print__input js-chat-input" rows="1" placeholder="Оставить комментарий..."></textarea>
+					<button class="chat-print__send js-chat-send">
+						<svg class="chat-message__status">
+							<use xlink:href="./img/sprite.svg#send"></use>
+						</svg>
+					</button>
 				</div>
 			</div>
 		</div>
