@@ -1041,6 +1041,64 @@ input[type="radio"].radio-standart {
 	-webkit-background-size: contain;
 	background-size: contain;
 }
+.info-wide {
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 500;
+	width: 100%;
+	height: 100%;
+	background-color: #ffffff;
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transition: opacity 0.3s ease, visibility 0.3s ease;
+	-o-transition: opacity 0.3s ease, visibility 0.3s ease;
+	transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.info-wide.is-opened {
+	opacity: 1;
+	visibility: visible;
+}
+.info-wide .info__close {
+	left: 0;
+	right: auto;
+}
+.info-wide__lc {
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	width: 70%;
+	height: 100%;
+}
+.info-wide__rc {
+	position: absolute;
+	right: 0;
+	top: 0;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	width: 30%;
+	height: 100%;
+	border-left: 1px solid #DADADA;
+}
+.info-wide .jspScrollable .info-content__group {
+	margin-right: -12px;
+}
 .ui-helper-hidden {
 	display: none;
 }

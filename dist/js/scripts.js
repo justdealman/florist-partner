@@ -36,7 +36,10 @@ $(function() {
 		}
 	});
 	
+	var destroyModalScrolls;
+	
 	function openOrder(e) {
+		clearTimeout(destroyModalScrolls);
 		var t = $('[data-order-id="'+e+'"]');
 		t.addClass('is-opened');
 		setScroll(t);
@@ -44,9 +47,18 @@ $(function() {
 	}
 	
 	function closeOrders() {
+		destroyModalScrolls = setTimeout(function() {
+			destroyScrolls();
+		}, 300);
 		$('[data-order-id]').removeClass('is-opened');
 		$('body').removeClass('is-locked');
 	}
+	
+	$(document).keyup(function(e) {
+		if ( ( e.keyCode === 27 && $('[data-order-id]').filter('.is-opened').length ) ) {
+			closeOrders();
+		}
+	});
 	
 	$('[data-order-open]').on('click', function() {
 		var t = $(this).attr('data-order-open');
@@ -96,18 +108,56 @@ $(function() {
 	
 	$('.select-custom').selectric();
 	
-	var scrollApi = null;
+	var scrollApi = [];
+	var count = 0;
 	
 	function setScroll(e) {
-		var scrollable = e.find('[data-custom-scroll]').jScrollPane();
-		scrollApi = scrollable.data('jsp');
+		setTimeout(function() {
+			var scrollable = [];
+			e.find('[data-custom-scroll]').each(function(e) {
+				scrollable[e] = $(this);
+				scrollable[e].jScrollPane();
+				scrollApi[e] = scrollable[e].data('jsp');
+				count++;
+			});
+			$(window).on('resize', function() {
+				for ( var i=0; i<count; i++ ) {
+					scrollApi[i].reinitialise();
+				}
+			});
+			
+	
+			if ( e.find('.js-chat-input').val() !== '' ) {
+				setAreaHeight($('.js-chat-input'));
+				if ( e.find('.js-chat-send').length !== '' ) {
+					e.find('.js-chat-send').addClass('is-active');
+				}
+			}
+			
+			e.find('.js-chat-input').on('input keyup change', function() {
+				setAreaHeight($(this));
+				for ( var i=0; i<count; i++ ) {
+					scrollApi[i].reinitialise();
+				}
+				if ( e.find('.js-chat-send').length !== '' ) {
+					if ( $(this).val() !== '' ) {
+						e.find('.js-chat-send').addClass('is-active');
+					} else {
+						e.find('.js-chat-send').removeClass('is-active');
+					}
+				}
+			});
+			
+			
+		}, 0);
 	}
 	
 	function destroyScrolls() {
-		if ( scrollApi !== null ) {
-			scrollApi.destroy();
-			console.log(scrollApi);
+		for ( var i=0; i<count; i++ ) {
+			scrollApi[i].destroy();
 		}
+		scrollApi = [];
+		count = 0;
 	}
 
 	$('.select-select2').select2({
@@ -225,25 +275,4 @@ $(function() {
 			chatPaneApi.reinitialise();
 		});
 	}
-	
-	if ( $('.js-chat-input').val() !== '' ) {
-		setAreaHeight($('.js-chat-input'));
-		if ( $('.js-chat-send').length !== '' ) {
-			$('.js-chat-send').addClass('is-active');
-		}
-	}
-	
-	$('.js-chat-input').on('input keyup change', function() {
-		setAreaHeight($(this));
-		if ( chatPaneApi !== undefined ) {
-			chatPaneApi.reinitialise();
-		}
-		if ( $('.js-chat-send').length !== '' ) {
-			if ( $(this).val() !== '' ) {
-				$('.js-chat-send').addClass('is-active');
-			} else {
-				$('.js-chat-send').removeClass('is-active');
-			}
-		}
-	});
 });
